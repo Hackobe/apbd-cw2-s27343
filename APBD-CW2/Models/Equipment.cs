@@ -6,7 +6,7 @@ public abstract class Equipment
 {
     private static int nextID = 1;
     
-    public int ID { get; }
+    public int Id { get; }
     public string Name { get; private set; }
     public EquipmentStatus Status { get; private set; }
 
@@ -15,7 +15,7 @@ public abstract class Equipment
         if (string.IsNullOrWhiteSpace(Name))
             throw new ArgumentException("Equipment name cannot be empty.", nameof(Name));
         
-        ID = nextID++;
+        Id = nextID++;
         this.Name = Name;
         Status = EquipmentStatus.Available;
     }
@@ -37,6 +37,6 @@ public abstract class Equipment
 
     public override string ToString()
     {
-        return $"ID: {ID}, Name: {Name}, Status: {Status}";
+        return $"ID: {Id}, Name: {Name}, Status: {Status}";
     }
 }
