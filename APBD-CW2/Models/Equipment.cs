@@ -1,0 +1,42 @@
+﻿using APBD_CW2.Enums;
+
+namespace APBD_CW2.Models;
+
+public abstract class Equipment
+{
+    private static int nextID = 1;
+    
+    public int ID { get; }
+    public string Name { get; private set; }
+    public EquipmentStatus Status { get; private set; }
+
+    protected Equipment(string Name)
+    {
+        if (string.IsNullOrWhiteSpace(Name))
+            throw new ArgumentException("Equipment name cannot be empty.", nameof(Name));
+        
+        ID = nextID++;
+        this.Name = Name;
+        Status = EquipmentStatus.Available;
+    }
+    
+    public void MarkAsAvailable()
+    {
+        Enum Status = EquipmentStatus.Available;
+    }
+
+    public void MarkAsRented()
+    {
+        Enum Status = EquipmentStatus.Rented;
+    }
+    
+    public void MarkAsUnavailable()
+    {
+        Enum Status = EquipmentStatus.Unavailable;
+    }
+
+    public override string ToString()
+    {
+        return $"ID: {ID}, Name: {Name}, Status: {Status}";
+    }
+}
