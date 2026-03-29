@@ -22,17 +22,17 @@ public abstract class Equipment
     
     public void MarkAsAvailable()
     {
-        Enum Status = EquipmentStatus.Available;
+        Status = EquipmentStatus.Available;
     }
 
     public void MarkAsRented()
     {
-        Enum Status = EquipmentStatus.Rented;
+        Status = EquipmentStatus.Rented;
     }
     
     public void MarkAsUnavailable()
     {
-        Enum Status = EquipmentStatus.Unavailable;
+        Status = EquipmentStatus.Unavailable;
     }
 
     public override string ToString()
